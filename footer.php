@@ -22,4 +22,23 @@
 	<!-- Demo Settings -->
 	 <script src="<?php echo base_url('assets/js/neon-demo.js'); ?>"></script>
 
+<script>
+//Based on the assumption that Jquery is available
+	$(document).ready(function(){
+	//Check that user hasn't accessed this app before
+		if(localStorage.hasItem('user.visited') === null)
+		{
+		 //Means user has never visited
+		 introJs.start(); //start intro.js	
+		}
+		//We need to bind an event to state that user has finished the tutorial if not if page was loaded and immediately refreshed it would never show
+		introJs().oncomplete(function() {
+		  //Save the state for completion
+		  localStorage.setItem('user.visited','true');	
+		});
+		
+	});
+	
+</script>
+
 

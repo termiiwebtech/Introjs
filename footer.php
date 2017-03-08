@@ -26,7 +26,7 @@
 //Based on the assumption that Jquery is available
 	$(document).ready(function(){
 	//Check that user hasn't accessed this app before
-		if(localStorage.hasItem('user.visited') === null)
+		if(localStorage.getItem('user.visited') === null)
 		{
 		 //Means user has never visited
 		 introJs.start(); //start intro.js	
